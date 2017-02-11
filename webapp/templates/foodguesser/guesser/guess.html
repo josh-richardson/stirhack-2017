@@ -1,5 +1,4 @@
 {% extends "foodguesser/base/base.html" %}
-{% load staticfiles %}
 
 {% block title_block %}
     Guess
@@ -7,12 +6,25 @@
 
 {% block body_block %}
 
-    {% if image %}
-    <p>Guess how many calories are in:
-    <img src="{% static "images/{{ image.url }}" %}"/>
+    <h4>Guess how many calories are in:</h4>
 
-    {# insert slider here #}
+	{# insert slider here #}
+	<img src="http://placehold.it/400x200" class="img-responsive">
 
-    <input type="submit" value="Guess"/>
-    {% endif %}
+	<select id="country" name="countries">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+	</select>
+
+	<form class="form01" action="">
+	    <button class="btn btn-checkbox-submit skip" type="submit">Next</button>
+	</form>
+
 {% endblock %}
