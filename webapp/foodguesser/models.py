@@ -8,7 +8,7 @@ class Food(models.Model):
     def __str__(self):
         return self.id
 
-class Scores(models.Model):
+class Score(models.Model):
     username = models.CharField(max_length=50)
     score = models.IntegerField()
 

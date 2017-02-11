@@ -18,7 +18,7 @@ def guess(request):
 
 
 def leaderboard(request):
-    scoredata = Scores.objects.all().order_by("-score")
+    scoredata = Score.objects.all().order_by("-score")
     return render(request, "guesser/leaderboard.html", {"scores":scoredata})
 
 
