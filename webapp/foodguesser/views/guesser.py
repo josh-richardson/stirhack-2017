@@ -13,13 +13,13 @@ def guess(request):
         else:
             return HttpResponse("Didnt do a guesstimate")
             
-    image = null
-    return render(request, "guesser/guess.html", {"img": image})
+    image = "cat.jpg"
+    return render(request, "foodguesser/guesser/guess.html", {"img": image})
 
 
 def leaderboard(request):
     scoredata = Score.objects.all().order_by("-score")
-    return render(request, "guesser/leaderboard.html", {"scores":scoredata})
+    return render(request, "foodguesser/guesser/leaderboard.html", {"scores":scoredata})
 
 
 #Helper functions

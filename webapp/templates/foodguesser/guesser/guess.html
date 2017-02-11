@@ -9,10 +9,10 @@
 
     {% if image %}
     <p>Guess how many calories are in:
-    <img src="{% static {{ image.url }}%}"/>
+    <img src="{% static "images/{{ image.url }}" %}"/>
 
     {# insert slider here #}
 
     <input type="submit" value="Guess"/>
-
+    {% endif %}
 {% endblock %}
