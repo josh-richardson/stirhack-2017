@@ -1,0 +1,30 @@
+{% extends "foodguesser/base/base.html" %}
+
+{% block title_block %}
+    Leaderboard
+{% endblock %}
+
+{% block body_block %}
+
+    {% if scores %}
+        <p>Top 10 Health freaks:<p>
+        {# Leaderboard #}
+
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Score</th>
+            </tr>
+
+            {% for score in scores|slice:"10" %}
+            <tr>
+                <td>score.username</td>
+                <td>score.score</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {# Graphs and shit #}
+
+    {% endif %}
+{% endblock %}

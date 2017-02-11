@@ -1,0 +1,18 @@
+{% extends "foodguesser/base/base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Guess
+{% endblock %}
+
+{% block body_block %}
+
+    {% if image %}
+    <p>Guess how many calories are in:
+    <img src="{% static {{ image.url }}%}"/>
+
+    {# insert slider here #}
+
+    <input type="submit" value="Guess"/>
+
+{% endblock %}
