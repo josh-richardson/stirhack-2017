@@ -93,3 +93,4 @@ ENV/
 .idea
 .idea/*
 .idea/
+db.sqlite3
