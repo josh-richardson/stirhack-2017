@@ -10,20 +10,19 @@
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" href="{% static "css/drum.min.css" %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/drum.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/rangeslider.css" %}">
+    <link rel="stylesheet" href="{% static "css/slider.css" %}">
+
+    <script src="{% static "js/jquery-3.1.1.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/hammer.min.js" %}"></script>
     <script src="{% static "js/hammer.fakemultitouch.js" %}"></script>
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>
-    Someapp - 
-    {% block title_block %}
-    {% endblock %}
     </title>
 </head>
 
@@ -215,6 +214,5 @@
 
 <script src="{% static "js/drum.min.js" %}"></script>
 <script src="{% static "js/tabs.js" %}"></script>
-<script src="{% static "js/spinner.js" %}"></script>
 </body>
 </html>

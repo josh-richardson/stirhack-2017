@@ -1,0 +1,16 @@
+.slider-div {
+  padding: 20px;
+}
+
+.rangeslider,
+.rangeslider__fill {
+  transition: background 0.3s;
+}
+
+.rangeslider--is-lowest-value {
+  background-color: white;
+}
+
+.rangeslider--is-highest-value .rangeslider__fill {
+  background-color: hotpink;
+}

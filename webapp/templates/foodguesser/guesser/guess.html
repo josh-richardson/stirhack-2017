@@ -1,4 +1,5 @@
 {% extends "foodguesser/base/base.html" %}
+{% load staticfiles %}
 
 {% block title_block %}
     Guess
@@ -8,23 +9,17 @@
 
     <h4>Guess how many calories are in:</h4>
 
-	{# insert slider here #}
 	<img src="http://placehold.it/400x200" class="img-responsive">
 
-	<select id="country" name="countries">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="5">5</option>
-		<option value="6">6</option>
-		<option value="7">7</option>
-		<option value="8">8</option>
-		<option value="9">9</option>
-	</select>
+	<div class="slider-div">
+		<input type="range" min="10" max="50">
+	</div>
+
 
 	<form class="form01" action="">
 	    <button class="btn btn-checkbox-submit skip" type="submit">Next</button>
 	</form>
 
+    <script src="{% static 'js/rangeslider.min.js' %}"></script>
+    <script src="{% static 'js/slider.js' %}"></script>
 {% endblock %}
