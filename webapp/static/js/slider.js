@@ -1,9 +1,9 @@
 const $element = $('input[type="range"]');
 const $tooltip = $('#range-tooltip');
 const sliderStates = [
-  {name: "low", tooltip: "Great, we're confident we can complete your project within <strong>24 hours</strong> of launch.", range: _.range(5, 26) },
-  {name: "med", tooltip: "Looks good! We can complete a project of this size within <strong>48 hours</strong> of launch.", range: _.range(26, 51)},
-  {name: "high", tooltip: "With a project of this size we'd like to talk with you before setting a completion timeline.", range: [51] },
+  {name: "low", tooltip: "Low state.", range: _.range(5, 26) },
+  {name: "med", tooltip: "Medium range.", range: _.range(26, 51)},
+  {name: "high", tooltip: "High state.", range: [51] },
 ];
 var currentState;
 var $handle;
