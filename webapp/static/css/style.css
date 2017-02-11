@@ -16,6 +16,10 @@ body {
     padding: 0;
 }
 
+.main-container {
+    text-align: center;
+}
+
 .nav-tabs {
     background: #33393c;
 }
@@ -79,7 +83,10 @@ h1, p, a {
     border-radius: 5px;
 }
 
-
+.form {
+    text-align: center;
+    vertical-align: middle;
+}
 
 .btn-group {
     margin: 5px;
@@ -119,4 +126,8 @@ h5.booking-info {
     color: black;
     font-family: 'Roboto', 'Open Sans', sans-serif;
     font-size: 14px;
+}
+
+.guess-img {
+    display: inline !important;
 }

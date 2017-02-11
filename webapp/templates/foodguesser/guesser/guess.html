@@ -9,14 +9,20 @@
 
     <h4>Guess how many calories are in:</h4>
 
-	<img src="http://placehold.it/400x200" class="img-responsive">
+	<img src="http://placehold.it/400x200" class="img-responsive guess-img">
 
-	<div class="slider-div">
-		<input type="range" min="10" max="50">
+	<div class="slider-container">
+		<input
+		type="range"
+		name="participants"
+		min="10"
+		max="51"
+		value="20"
+		>
+		<span class="rangeslider__tooltip" id ="range-tooltip"></span>
 	</div>
 
-
-	<form class="form01" action="">
+	<form class="form" action="">
 	    <button class="btn btn-checkbox-submit skip" type="submit">Next</button>
 	</form>
 
