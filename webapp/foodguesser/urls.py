@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from views import *
+from foodguesser import views
+from foodguesser.views import *
 
 urlpatterns = [
     url(r'^/$', views.base.index, name="index"),

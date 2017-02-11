@@ -6,7 +6,7 @@ def guess(request):
         guesstimate = request.POST.get("guess")
 
         if(guesstimate and guessid):
-            if(Food.objects.get(id=guessid).calories = guesstimate):
+            if(Food.objects.get(id=guessid).calories == guesstimate):
                 session_add_score(request)
             
             return HttpRedirect(reverse("guess"))
@@ -17,7 +17,9 @@ def guess(request):
     return render(request, "guesser/guess.html", {"img": image})
 
 
-
+def leaderboard(request):
+    scoredata = Scores.objects.all().order_by("-score")
+    return render(request, "guesser/leaderboard.html", {"scores":scoredata})
 
 
 #Helper functions
