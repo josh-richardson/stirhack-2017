@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from foodguesser.models import Food, Score
-import random
 from django.http import HttpResponse
-import json
 from django.contrib.staticfiles.templatetags.staticfiles import static
+import math
+import random
+import json
 
 def guess(request):
     return render(request, "foodguesser/guesser/guess.html", {})
@@ -32,9 +33,10 @@ def post_food(request):
 
         if(guesstimate and guessid):
             actual = Food.objects.get(id=guessid).calories
-            score = math.abs(actual-guesstimate)
+            score = math.fabs(actual-guesstimate)
 
-            session_add_score(request, score) 
+            session_add_score(request, score)
+            return HttpResponse("Guess submitted")
         else:
             return HttpResponse("Didnt do a guesstimate, probably doing some suspicious stuff. Either that or josh broke it.")
 
@@ -45,7 +47,7 @@ def leaderboard(request):
 
 
 #Helper functions
-def session_add_score(requesti, add_score):
+def session_add_score(request, add_score):
     score = request.session.get("score")
     
     if(score):

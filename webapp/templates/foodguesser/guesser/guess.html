@@ -25,7 +25,10 @@
 		<!--<span class="rangeslider__tooltip" id ="range-tooltip"></span>-->
 	</div>
 
-	<button class="btn btn-checkbox-submit skip" type="submit">Submit</button>
+	<form>
+		{% csrf_token %}
+		<button class="btn btn-checkbox-submit skip" type="submit">Submit</button>
+	</form>
 
 	<div class="answer-div">
 		<span class="answer"></span>
