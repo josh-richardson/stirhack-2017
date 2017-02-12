@@ -26,7 +26,7 @@ function postAnswer(id, guess, token) {
 			guess: guess
 		},
 		success: function(score) {
-			$(".score").html('Score: '+parseInt(score));
+			$(".score").html('Inaccuracy: '+parseInt(score));
 
 		}, error: function() {
 			console.log("ERROR POST /guess");
