@@ -6,7 +6,7 @@ class Food(models.Model):
     calories = models.IntegerField()
 
     def __str__(self):
-        return self.id
+        return str(self.image)
 
 class Score(models.Model):
     username = models.CharField(max_length=50)
