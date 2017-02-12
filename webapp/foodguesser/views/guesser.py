@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from foodguesser.models import Food, Score
+import random
 
 def guess(request):
     if request.method == "POST":
@@ -14,8 +15,10 @@ def guess(request):
         else:
             return HttpResponse("Didnt do a guesstimate")
             
-    image = "cat.jpg"
-    return render(request, "foodguesser/guesser/guess.html", {"img": image})
+    images = Food.objects.all()
+    image = random.choice(images)
+    print(image)
+    return render(request, "foodguesser/guesser/guess.html", {"image": str(image)})
 
 
 def leaderboard(request):

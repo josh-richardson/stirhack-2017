@@ -9,7 +9,8 @@
 
     <h4>Guess how many calories are in:</h4>
 
-	<img src="http://placehold.it/400x200" class="img-responsive guess-img">
+    {% if image %}
+    <img src="{% static ''|add:image %}" class="img-responsive guess-img">
 
 	<div class="slider-container">
 		<input
@@ -21,6 +22,10 @@
 		>
 		<!--<span class="rangeslider__tooltip" id ="range-tooltip"></span>-->
 	</div>
+
+    {% else %}
+        <p>No image found! :(</p>
+    {% endif %}
 
 	<form class="form" action="">
 	    <button class="btn btn-checkbox-submit skip" type="submit">Next</button>
