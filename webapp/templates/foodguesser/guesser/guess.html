@@ -25,14 +25,19 @@
 		<!--<span class="rangeslider__tooltip" id ="range-tooltip"></span>-->
 	</div>
 
-	<form>
-		{% csrf_token %}
-		<button class="btn btn-checkbox-submit skip" type="submit">Submit</button>
-	</form>
+	<div class="score-div">
+		<span class="score">Score: </span>
+	</div>
 
 	<div class="answer-div">
-		<span class="answer"></span>
+		<span class="answer">Actual: </span>
 	</div>
+
+	<form>
+		{% csrf_token %}
+		<button class="btn btn-checkbox-submit skip" type="submit">Guess</button>
+		<button class="btn btn-next">Next</button>
+	</form>
 
     <script src="{% static 'js/rangeslider.min.js' %}"></script>
     <script src="{% static 'js/slider.js' %}"></script>

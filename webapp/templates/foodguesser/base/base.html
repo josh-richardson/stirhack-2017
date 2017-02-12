@@ -30,23 +30,31 @@
 <div class="jumbotron">
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
-            <li class="active" role="presentation"><a href="#question00" aria-controls="question" role="tab" data-toggle="tab">Selection</a></li>
-            <li class="" role="presentation"><a href="#heatmap" aria-controls="" role="tab" data-toggle="tab">Caloroid</a></li>
+            <li class="active" role="presentation"><a href="#caloroid" aria-controls="question" role="tab" data-toggle="tab">Caloroid</a></li>
+            <li class="" role="presentation"><a href="#leaderboard" aria-controls="" role="tab" data-toggle="tab">Highscores</a></li>
         </ul>
         <div class="tab-content">
-
-            <div role="tabpanel" class="tab-pane fade in active" id="question00">
+            <div role="tabpanel" class="tab-pane fade in active" id="caloroid">
                 <div class="container-fluid">
                     <div class="col-md-12 main-container" style="margin: auto;">
                         {% block body_block %}{% endblock %}
                     </div>
                 </div>
             </div>
+            <div role="tabpanel" class="tab-pane fade in" id="leaderboard">
+                <div class="container-fluid">
+                    <div class="col-md-12 main-container" style="margin: auto;">
+                    
+                        <table class="highscores">
+                            <tr>
+                                <th>Username</th>
+                                <th>Score</th>
+                            </tr>
+                        </table>
 
-            <div role="tabpanel" class="tab-pane fade" id="heatmap">
-                <div id="heatmap-container"></div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </div>

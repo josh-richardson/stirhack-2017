@@ -136,5 +136,9 @@ h5.booking-info {
 }
 
 .answer-div {
-    padding: 20px;
+    position: relative;
+    top: 0;
+    font-size: 20px;
+    color: black;
+    padding-top: 5px;
 }
