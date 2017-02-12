@@ -14,7 +14,7 @@ function postAnswer(id, guess, token) {
 	if (guess[guess.length-1] == "+") {
 		guess = guess.substring(0, guess.length-1);
 	}
-	c
+	
 	$.ajax({
 		url: '/post_food/',
 		method: 'POST',
@@ -25,8 +25,8 @@ function postAnswer(id, guess, token) {
 			id: id,
 			guess: guess
 		},
-		success: function(data) {
-			console.log(data);
+		success: function(score) {
+			$(".score").html('Score: '+parseInt(score));
 
 		}, error: function() {
 			console.log("ERROR POST /guess");
@@ -39,20 +39,19 @@ $(document).ready(function() {
 	var id;
 	var guess;
 	var score;
+	var calories;
 
 	img = getNext(function(img) {
-		score = img.calories;
+		calories = img.calories;
 		id = img.id;
 		$(".guess-img").attr('src', img.image);
-
 	});
 
 	$(".btn-checkbox-submit").click(function(e) {
-		console.log("Button jhsdgfjhsgfjhgj");
         e.preventDefault();
         guess = $('.rangeslider__handle').text();
         $('.answer-div').css('visibility', 'visible');
-        $(".answer").html('Answer: '+score);
+        $(".answer").html('Answer: '+calories);
         var token = $('input[name=csrfmiddlewaretoken]').val();
         postAnswer(id, guess, token);
 
@@ -61,19 +60,16 @@ $(document).ready(function() {
 
     $(".btn-next").click(function(e) {
     	e.preventDefault();
-    	// $(".btn-next").disable();
     	$('.answer-div').css('visibility', 'hidden');
     	getNext(function(img) {
         	console.log("Timeout finished");
-			score = img.calories;
+			calories = img.calories;
 			$(".guess-img").attr('src', img.image);
 		})
 		$(".btn-checkbox-submit").prop('disabled', false);
     });
 
     $("a[href='#leaderboard']").click(function(e) {
-    	console.log("Fetch ");
-
     	$.ajax({
 			url: '/get_score',
 			success: function(data) {
@@ -89,4 +85,10 @@ $(document).ready(function() {
 
     });
 
+});
+
+
+
+$("#username-submit").click(function () {
+    $('.nav-tabs a[href="#caloroid"]').tab('show');
 });

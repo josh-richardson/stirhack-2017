@@ -136,9 +136,11 @@ h5.booking-info {
 }
 
 .answer-div {
-    position: relative;
-    top: 0;
-    font-size: 20px;
     color: black;
-    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.score-div {
+    color: black;
+    padding-bottom: 20px;
 }
