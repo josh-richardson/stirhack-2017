@@ -101,6 +101,7 @@ $(document).ready(function() {
     })
 
     $("a[href='#leaderboard']").click(function(e) {
+    	$(".highscores").empty();
     	$.ajax({
 			url: '/get_score',
 			success: function(data) {

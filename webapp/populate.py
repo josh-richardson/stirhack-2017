@@ -30,7 +30,6 @@ def populate():
         add_score(username, score)
 
 
-
 def add_score(username, score):
     s, created = Score.objects.get_or_create(username=username, score=score)
     s.save()
