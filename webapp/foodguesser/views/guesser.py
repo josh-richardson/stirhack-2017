@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from foodguesser.models import Food, Score
 import random
+from django.http import HttpResponse
+import json
+
 
 def guess(request):
     if request.method == "POST":
@@ -17,9 +20,14 @@ def guess(request):
             
     images = Food.objects.all()
     image = random.choice(images)
-    print(image)
     return render(request, "foodguesser/guesser/guess.html", {"image": str(image)})
 
+
+def get_food(request):
+    feed = Food.objects.all()
+    food = random.choice(feed)
+    json_dict = {"id":int(food.id), "image":str(food.image), "calories":int(food.calories)}
+    return HttpResponse(json.dumps(json_dict))
 
 def leaderboard(request):
     scoredata = Score.objects.all().order_by("-score")
