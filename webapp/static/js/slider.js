@@ -1,9 +1,9 @@
 const $element = $('input[type="range"]');
 const $tooltip = $('#range-tooltip');
 const sliderStates = [
-  {name: "low", tooltip: "Low state.", range: _.range(5, 26) },
-  {name: "med", tooltip: "Medium range.", range: _.range(26, 51)},
-  {name: "high", tooltip: "High state.", range: [51] },
+  {name: "low", tooltip: "Low state.", range: _.range(0, 250) },
+  {name: "med", tooltip: "Medium range.", range: _.range(251, 550)},
+  {name: "high", tooltip: "High state.", range: _.range(551, 700) },
 ];
 var currentState;
 var $handle;
@@ -45,7 +45,7 @@ function updateState(el, val) {
   }
   // If the state is high, update the handle count to read 50+
   if (currentState.name == "high") {
-    updateHandle($handle[0], "50+");
+    updateHandle($handle[0], "700+");
   }
   // Update handle color
   $handle
