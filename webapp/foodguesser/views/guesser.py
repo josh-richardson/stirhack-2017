@@ -55,6 +55,7 @@ def get_score(request):
         else:
             scores.append({"username": x.username, "score":x.score/x.guess_count}) 
 
+    scores = sorted(scores, key=lambda k: k['score']) 
     #scoredata = serializers.serialize('json', scores)
     print(scores)
     return HttpResponse(json.dumps(scores))
