@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="{% static "css/drum.min.css" %}">
     <link rel="stylesheet" href="{% static "css/rangeslider.css" %}">
     <link rel="stylesheet" href="{% static "css/slider.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
 
+    <script src="{% static "js/underscore.min.js" %}"></script>
     <script src="{% static "js/jquery-3.1.1.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/hammer.min.js" %}"></script>
@@ -39,7 +40,7 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="question00">
                 <div class="container-fluid">
-                    <div class="col-md-12" style="margin: auto;">
+                    <div class="col-md-12 main-container" style="margin: auto;">
                         {% block body_block %}{% endblock %}
                     </div>
                 </div>
