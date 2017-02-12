@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'get_food/$', views.guesser.get_food, name="get_food"),
     url(r'post_food/$', views.guesser.post_food, name="post_food"),
     url(r'get_score/$', views.guesser.get_score, name="get_score"),
+    url(r'post_username/$', views.guesser.username, name="post_username"),
 ]
