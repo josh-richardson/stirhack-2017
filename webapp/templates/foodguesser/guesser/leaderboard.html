@@ -18,8 +18,8 @@
 
             {% for score in scores|slice:"10" %}
             <tr>
-                <td>score.username</td>
-                <td>score.score</td>
+                <td>{{ score.username}}</td>
+                <td>{{score.score}}</td>
             </tr>
             {% endfor %}
         </table>

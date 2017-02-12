@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from foodguesser.models import Food, Score
 
 def guess(request):
     if request.method == "POST":
