@@ -3,7 +3,7 @@ from foodguesser.models import Food, Score
 import random
 from django.http import HttpResponse
 import json
-
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 def guess(request):
     if request.method == "POST":
@@ -26,8 +26,25 @@ def guess(request):
 def get_food(request):
     feed = Food.objects.all()
     food = random.choice(feed)
-    json_dict = {"id":int(food.id), "image":str(food.image), "calories":int(food.calories)}
+    json_dict = {"id":int(food.id), "image":static(str(food.image)), "calories":int(food.calories)}
     return HttpResponse(json.dumps(json_dict))
+
+
+def post_guess(request):
+    if request.method == "POST":
+        guessid = int(request.POST.get("id"))
+        guesstimate = int(request.POST.get("guess"))
+
+        if(guesstimate and guessid):
+            actual = Food.objects.get(id=guessid).calories
+            score = math.abs(actual-guesstimate)
+            if(Food.objects.get(id=guessid).calories == guesstimate):
+                session_add_score(request)
+            
+            return HttpRedirect(reverse("guess"))
+        else:
+            return HttpResponse("Didnt do a guesstimate")
+
 
 def leaderboard(request):
     scoredata = Score.objects.all().order_by("-score")
