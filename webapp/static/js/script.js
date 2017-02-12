@@ -109,7 +109,7 @@ $(document).ready(function() {
 				data = JSON.parse(data);
 				for (key in data) {
 					console.log(data[key]);
-					$(".highscores").append("<tr><td>"+data[key].fields.username+"</td><td>"+data[key].fields.score+"</td></tr>");
+					$(".highscores").append("<tr><td>"+data[key].username+"</td><td>"+data[key].score+"</td></tr>");
 				}
 			}, error: function() {
 				console.log("ERROR GET /get_score");

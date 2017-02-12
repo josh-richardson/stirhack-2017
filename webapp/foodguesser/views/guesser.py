@@ -46,9 +46,18 @@ def post_food(request):
 
 
 def get_score(request):
-    scoredata = serializers.serialize('json', Score.objects.all().order_by("score"))
-    print(scoredata)
-    return HttpResponse((scoredata))
+    s = Score.objects.all()
+
+    scores = []
+    for x in s:
+        if(x.guess_count==0):
+            scores.append({"username":x.username, "score":0})
+        else:
+            scores.append({"username": x.username, "score":x.score/x.guess_count}) 
+
+    #scoredata = serializers.serialize('json', scores)
+    print(scores)
+    return HttpResponse(json.dumps(scores))
     #return JsonResponse(scoredata, safe=False)
 
 
