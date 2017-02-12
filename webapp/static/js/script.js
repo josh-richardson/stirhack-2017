@@ -41,10 +41,10 @@ function postUsername(username, token){
             method: 'POST',
             headers: {
                 "X-CSRFToken": token
-            }
+            },
             data:{
                 username:username
-            }
+            },
             success: function(data) {
 			    console.log(data);
 
@@ -63,8 +63,6 @@ $(document).ready(function() {
 	var guess;
 	var score;
 	var calories;
-
-    $('.nav-tabs a[href=#caloroid]').css('visibility','hidden');
 
 	img = getNext(function(img) {
 		calories = img.calories;
@@ -99,7 +97,7 @@ $(document).ready(function() {
         username = $('.username').text();
         var token = $('input[name=csrfmiddlewaretoken]').val();
         postUsername(username, token);
-        $('.nav-tabs a[href=#username]').tab('show');
+        $('.nav-tabs a[href="#caloroid"]').tab('show');
     })
 
     $("a[href='#leaderboard']").click(function(e) {
