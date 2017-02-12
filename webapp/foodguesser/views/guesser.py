@@ -46,7 +46,7 @@ def post_food(request):
 
 
 def get_score(request):
-    scoredata = serializers.serialize('json', Score.objects.all().order_by("-score"))
+    scoredata = serializers.serialize('json', Score.objects.all().order_by("score"))
     print(scoredata)
     return HttpResponse((scoredata))
     #return JsonResponse(scoredata, safe=False)
@@ -66,14 +66,14 @@ def session_add_score(request, add_score):
         score += add_score
     else:
         score = add_score
-
+    print(score)
     request.session["score"] = score
     
     #Save it if the user is logged in
     if(request.session.get("username")):
         s,created = Score.objects.get_or_create(username=request.session["username"])
-        s["score"] = score
-        s["guess_count"] += 1;
+        s.score = score
+        s.guess_count += 1;
         s.save()
 
     return request.session["score"]
