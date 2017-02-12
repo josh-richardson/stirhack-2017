@@ -34,11 +34,36 @@ function postAnswer(id, guess, token) {
 	})
 }
 
+function postUsername(username, token){
+    if(username.length > 0){
+        $.ajax({
+            url: "/post_username/",
+            method: 'POST',
+            headers: {
+                "X-CSRFToken": token
+            }
+            data:{
+                username:username
+            }
+            success: function(data) {
+			    console.log(data);
+
+		    }, error: function() {
+			    console.log("ERROR POST username");
+		    }
+        })
+    }
+}
+
+            
+
 $(document).ready(function() {
 	var img;
 	var id;
 	var guess;
 	var score;
+
+    $('.nav-tabs a[href=#caloroid]').css('visibility','hidden');
 
 	img = getNext(function(img) {
 		score = img.calories;
@@ -70,6 +95,14 @@ $(document).ready(function() {
 		})
 		$(".btn-checkbox-submit").prop('disabled', false);
     });
+
+    $(".btn-username-submit").click(function(e){
+        e.preventDefault();
+        username = $('.username').text();
+        var token = $('input[name=csrfmiddlewaretoken]').val();
+        postUsername(username, token);
+        $('.nav-tabs a[href=#username]').tab('show');
+    })
 
     $("a[href='#leaderboard']").click(function(e) {
     	console.log("Fetch ");
