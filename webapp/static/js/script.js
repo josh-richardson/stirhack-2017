@@ -43,9 +43,10 @@ function postUsername(username, token){
                 "X-CSRFToken": token
             },
             data:{
-                username:username
+                username: username
             },
             success: function(data) {
+            	console.log("Posted");
 			    console.log(data);
 
 		    }, error: function() {
@@ -94,7 +95,7 @@ $(document).ready(function() {
 
     $(".btn-username-submit").click(function(e){
         e.preventDefault();
-        username = $('.username').text();
+        username = $('.username').val();
         var token = $('input[name=csrfmiddlewaretoken]').val();
         postUsername(username, token);
         $('.nav-tabs a[href="#caloroid"]').tab('show');
