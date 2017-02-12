@@ -6,21 +6,7 @@ import json
 from django.contrib.staticfiles.templatetags.staticfiles import static
 
 def guess(request):
-    if request.method == "POST":
-        guessid = request.POST.get("id")
-        guesstimate = request.POST.get("guess")
-
-        if(guesstimate and guessid):
-            if(Food.objects.get(id=guessid).calories == guesstimate):
-                session_add_score(request)
-            
-            return HttpRedirect(reverse("guess"))
-        else:
-            return HttpResponse("Didnt do a guesstimate")
-            
-    images = Food.objects.all()
-    image = random.choice(images)
-    return render(request, "foodguesser/guesser/guess.html", {"image": str(image)})
+    return render(request, "foodguesser/guesser/guess.html", {})
 
 
 def get_food(request):
@@ -38,12 +24,10 @@ def post_guess(request):
         if(guesstimate and guessid):
             actual = Food.objects.get(id=guessid).calories
             score = math.abs(actual-guesstimate)
-            if(Food.objects.get(id=guessid).calories == guesstimate):
-                session_add_score(request)
-            
-            return HttpRedirect(reverse("guess"))
+
+            session_add_score(request, score) 
         else:
-            return HttpResponse("Didnt do a guesstimate")
+            return HttpResponse("Didnt do a guesstimatei, probably doing some suspicious stuff. Either that or josh broke it.")
 
 
 def leaderboard(request):
@@ -52,13 +36,13 @@ def leaderboard(request):
 
 
 #Helper functions
-def session_add_score(request):
+def session_add_score(requesti, add_score):
     score = request.session.get("score")
     
     if(score):
-        score += 1
+        score += add_score
     else:
-        score = 1
+        score = add_score
 
     request.sesion["score"] = score
         
