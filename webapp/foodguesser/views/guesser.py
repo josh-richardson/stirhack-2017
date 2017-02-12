@@ -9,6 +9,15 @@ def guess(request):
     return render(request, "foodguesser/guesser/guess.html", {})
 
 
+def username(request):
+
+    if request.method == "POST":
+        if(request.POST["username"]):
+            request.session["username"] = request.POST["username"]
+
+    return render(request, "foodguesser/guesser/username.html",{})
+
+
 def get_food(request):
     feed = Food.objects.all()
     food = random.choice(feed)
@@ -16,7 +25,7 @@ def get_food(request):
     return HttpResponse(json.dumps(json_dict))
 
 
-def post_guess(request):
+def post_food(request):
     if request.method == "POST":
         guessid = int(request.POST.get("id"))
         guesstimate = int(request.POST.get("guess"))
@@ -27,7 +36,7 @@ def post_guess(request):
 
             session_add_score(request, score) 
         else:
-            return HttpResponse("Didnt do a guesstimatei, probably doing some suspicious stuff. Either that or josh broke it.")
+            return HttpResponse("Didnt do a guesstimate, probably doing some suspicious stuff. Either that or josh broke it.")
 
 
 def leaderboard(request):
@@ -44,5 +53,5 @@ def session_add_score(requesti, add_score):
     else:
         score = add_score
 
-    request.sesion["score"] = score
+    request.session["score"] = score
         
