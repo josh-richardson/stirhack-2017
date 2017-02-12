@@ -12,12 +12,7 @@ jQuery(function(){
     });*/
 
     // On submit of checkbox form
-    $(".btn-checkbox-submit").click(function(e) {
-        e.preventDefault();
-        console.log($(this));
-
-        $('.nav-tabs a[href="#packages"]').tab('show');
-    });
+    
 
 
     $(".btn-01").click(function () {

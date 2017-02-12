@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static "css/drum.min.css" %}">
     <link rel="stylesheet" href="{% static "css/rangeslider.css" %}">
     <link rel="stylesheet" href="{% static "css/slider.css" %}">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
@@ -21,8 +20,6 @@
     <script src="{% static "js/underscore.min.js" %}"></script>
     <script src="{% static "js/jquery-3.1.1.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/hammer.min.js" %}"></script>
-    <script src="{% static "js/hammer.fakemultitouch.js" %}"></script>
     <title>
     </title>
 </head>
@@ -34,10 +31,10 @@
     <div class="container">
         <ul class="nav nav-tabs" role="tablist">
             <li class="active" role="presentation"><a href="#question00" aria-controls="question" role="tab" data-toggle="tab">Selection</a></li>
-            <li class="" role="presentation"><a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a></li>
             <li class="" role="presentation"><a href="#heatmap" aria-controls="" role="tab" data-toggle="tab">Caloroid</a></li>
         </ul>
         <div class="tab-content">
+
             <div role="tabpanel" class="tab-pane fade in active" id="question00">
                 <div class="container-fluid">
                     <div class="col-md-12 main-container" style="margin: auto;">
@@ -46,165 +43,6 @@
                 </div>
             </div>
 
-            <div role="tabpanel" class="tab-pane fade in" id="question01">
-                <div class="container-fluid">
-                    <div class="col-md-4" style="margin: auto; text-align: center;">
-                        <div class="qa01">
-                            <h3 class="q1">Do you wish to see the famous statue of Buddha?</h3>
-                            <div class="row">
-                                <br/>
-                                <br/>
-                                <button class="btn btn-01 yes">Yes</button>
-                                <button class="btn btn-01 no">No</button>
-                                <button class="btn btn-01 skip">Skip</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade in" id="question02">
-                <div class="container-fluid" style="padding-top: 10px;">
-                    <div class="col-md-4" style="margin: auto; text-align: center;">
-                        <div class="qa02">
-                            <h3 class="q2">Do you want an adventurous time? (exploring the local attractions)</h3>
-                            <br/>
-                            <br/>
-                            <div class="row">
-                                <button class="btn btn-02 yes">Yes</button>
-                                <button class="btn btn-02 no">No</button>
-                                <button class="btn btn-02 skip">Skip</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade in" id="question03">
-                <div class="container-fluid" style="padding-top: 10px;">
-                    <div class="col-md-4" style="margin: auto; text-align: center;">
-                        <div class="qa03">
-                            <h3 class="q3">Are you interested in the least expensive package?</h3>
-                            <div class="row">
-                                <br/>
-                                <br/>
-                                <button class="btn btn-03 yes">Yes</button>
-                                <button class="btn btn-03 no">No</button>
-                                <button class="btn btn-03 skip">Skip</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane fade" id="packages">
-                <div class="container-fluid" style="padding-top: 10px;">
-                    <div class="col-md-4" style="margin: auto;">
-                        <h5>Packages Tailored for You</h5>
-
-                        <div class="package_container standard">
-                            <div class="package_summary row">
-                                <div class="col-xs-3 img_containeCrystal r">
-                                </div>
-                                <div class="col-xs-9 package_pricing">
-                                    <span class="package_header">360 Fishing Village Insight Tour</span>
-                                    <hr>
-                                    <i class="package_icon">Adult:</i>&nbsp;&nbsp;&nbsp;HK$$390<br>
-                                    <i class="package_icon">Child:</i>&nbsp;&nbsp;&nbsp;HK$320<br>
-                                    <i class="package_icon">Senior:</i>&nbsp;&nbsp;&nbsp;-
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-xs-12 choices">
-                                <button class="btn" data-toggle="collapse" data-target="#desc01">More Details</button>
-                                <div class="button availability">Availability</div>
-                            </div>
-                            <div class="collapse">
-                                <div class="package_details row" style="display: none;">
-                                    <p>Schedule</p>
-                                    <p><strong>Weekdays:</strong> 11:00 - 17:00</p>
-                                    <p><strong>Weekends and Holidays:</strong> 10:00 - 15:30</p>
-                                </div>
-                            </div>
-
-                            <button style="visibility: hidden">Collapsible</button>
-                            <div id="desc01" class="collapse">
-                                Tour fee includes single-trip cable car ticket from Tung Chung to Ngong Ping, air-conditioned sightseeing coach transfer to Tai O Fishing Village, Tai O boat excursion, Traditional stilt house visitation, free tasting of Tai O local gourmets , guided services and one-way ferry ticket from Tai O to Tung Chung.
-                            </div>
-                        </div>
-
-                        <div class="package_container standard">
-                            <div class="package_summary row">
-                                <div class="col-xs-3 img_container">
-                                </div>
-                                <div class="col-xs-9 package_pricing">
-                                    <span class="package_header">360 Holiday Guided Tour</span>
-                                    <hr>
-                                    <i class="package_icon">Adult:</i>&nbsp;&nbsp;&nbsp;HK$400<br>
-                                    <i class="package_icon">Child:</i>&nbsp;&nbsp;&nbsp;HK$300<br>
-                                    <i class="package_icon">Senior:</i>&nbsp;&nbsp;&nbsp;HK$200
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-xs-12 choices">
-                                <button class="btn" data-toggle="collapse" data-target="#desc02">More Details</button>
-                                <div class="button availability">Availability</div>
-                            </div>
-                            <div class="collapse">
-                                <div class="package_details row" style="display: none;">
-                                    <p>Schedule</p>
-                                    <p><strong>Weekdays:</strong> 11:00 - 17:00</p>
-                                    <p><strong>Weekends and Holidays:</strong> 10:00 - 15:30</p>
-                                </div>
-                            </div>
-
-                            <button style="visibility: hidden">Collapsible</button>
-                            <div id="desc02" class="collapse">
-
-                                Includes: Ngong Ping Village, Po Lin Monastery, Big Buddha, Tai O Fishing Village with boat excursion, Ngong Ping Piazza
-                                Book Now
-                            </div>
-                        </div>
-
-                        <div class="package_container standard">
-                            <div class="package_summary row">
-                                <div class="col-xs-3 img_container">
-                                </div>
-                                <div class="col-xs-9 package_pricing">
-                                    <span class="package_header">Base Cable Car Experience</span>
-                                    <hr>
-                                    <i class="package_icon">Adult:</i>&nbsp;&nbsp;&nbsp;HK$400<br>
-                                    <i class="package_icon">Child:</i>&nbsp;&nbsp;&nbsp;HK$300<br>
-                                    <i class="package_icon">Senior:</i>&nbsp;&nbsp;&nbsp;HK$200
-                                </div>
-                            </div>
-                            <div class="package_details row" style="display: none;">
-                                <p>Schedule</p>
-                                <p><strong>Weekdays:</strong> 11:00 - 17:00</p>
-                                <p><strong>Weekends and Holidays:</strong> 10:00 - 15:30</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            </div>
-                            <br>
-                            <div class="col-xs-12 choices">
-                                <button class="btn" data-toggle="collapse" data-target="#desc03">More Details</button>
-                                <div class="button availability">Availability</div>
-                            </div>
-                            <div class="collapse">
-                                <div class="package_details row" style="display: none;">
-                                    <p>Schedule</p>
-                                    <p><strong>Weekdays:</strong> 11:00 - 17:00</p>
-                                    <p><strong>Weekends and Holidays:</strong> 10:00 - 15:30</p>
-                                </div>
-                            </div>
-
-                            <button style="visibility: hidden">Collapsible</button>
-                            <div id="desc03" class="collapse">
-                                A standard ticket including a return journey with the cable car.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div role="tabpanel" class="tab-pane fade" id="heatmap">
                 <div id="heatmap-container"></div>
             </div>
