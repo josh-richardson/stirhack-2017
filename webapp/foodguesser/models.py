@@ -10,7 +10,7 @@ class Food(models.Model):
 
 class Score(models.Model):
     username = models.CharField(max_length=50)
-    score = models.IntegerField()
+    score = models.IntegerField(default=0)
     guess_count = models.IntegerField(default=0)
 
     def __str__(self):
