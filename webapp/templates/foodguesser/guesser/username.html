@@ -1,0 +1,13 @@
+{% extends "foodguesser/base/base.html" %}
+
+{% block title_block %}
+    Enter Username
+{% endblock %}
+
+{% block body_block %}
+    <form action="post_username">
+        {% csrf_token %}
+        <input type="text" value="username">Please Enter A Username</input>
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}
