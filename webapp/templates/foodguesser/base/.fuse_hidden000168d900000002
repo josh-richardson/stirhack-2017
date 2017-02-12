@@ -36,13 +36,9 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="username">
-                <div class="contianer-fluid">
+                <div class="container-fluid">
                     <div class="col-md-12 main-container" style="margin: auto;">
-                         <form>
-                            {% csrf_token %}
-                            <input class="username" type="text" value="username">Please Enter A Username</input>
-                            <input class="btn btn-username-submit" type="submit" value="Submit"/>
-                        </form>
+                        Username form here
                     </div>
                 </div>
             </div>
