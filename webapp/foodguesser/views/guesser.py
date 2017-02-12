@@ -12,9 +12,10 @@ def guess(request):
 
 
 def username(request):
-
+    
     if request.method == "POST":
         if(request.POST["username"]):
+            console.log(request.POST["username"])
             request.session["username"] = request.POST["username"]
 
     return render(request, "foodguesser/guesser/username.html",{})
@@ -68,4 +69,12 @@ def session_add_score(request, add_score):
         score = add_score
 
     request.session["score"] = score
+    
+    #Save it if the user is logged in
+    if(request.session.get("username")):
+        s = Score.objects.get_or_create(username=request.session["username"])
+        s.score = score
+        s.guess_count += 1;
+        s.save()
+
     return request.session["score"]
